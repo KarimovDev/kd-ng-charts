@@ -45,7 +45,6 @@ export class LineChartComponent implements OnInit {
   @Input()
   private set params(value: LineChartInputParams) {
     this.inputParams = value;
-    this.ref.detectChanges();
   }
 
   public inputParams: LineChartInputParams;

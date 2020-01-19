@@ -1,24 +1,32 @@
 <div class="circle-chart-wrapper">
-	<svg viewBox="0 0 31.830988618 31.830988618">
+  <svg viewBox="0 0 31.830988618 31.830988618">
     <circle
+      [attr.id]="inputParam.id"
       *ngFor="let inputParam of inputParams"
-			class="circle"
-			[@animateFilling]="{
-				value: currentState,
-				params: { dashArray: inputParam.dashArray, dashOffset: inputParam.dashOffset }
-			}"
-			r="15.915494309"
-			cx="15.915494309"
-			cy="15.915494309"
+      class="circle"
+      [@animateFilling]="{
+        value: currentState,
+        params: {
+          dashArray: inputParam.dashArray,
+          dashOffset: inputParam.dashOffset
+        }
+      }"
+      [@animateClick]="{value: inputParam.currentState}"
+      r="15.915494309"
+      cx="15.915494309"
+      cy="15.915494309"
       [attr.stroke]="inputParam.color"
-			stroke-width="10"
-			fill-opacity="0"
-		/>
+      stroke-width="10"
+      fill-opacity="0"
+      pointer-events="stroke"
+      (mousedown)="circleMouseDown($event.target.getAttribute('id'))"
+      (mouseup)="circleMouseUp($event.target.getAttribute('id'))"
+    />
   </svg>
   <div class="text-wrapper">
-		<p #text class="text-data">40 Гб</p>
-		<p class="text-hint">
+    <p #text class="text-data">{{ total | kbToSize }}</p>
+    <p class="text-hint">
       <ng-content select=".text-hint"></ng-content>
     </p>
-	</div>
+  </div>
 </div>

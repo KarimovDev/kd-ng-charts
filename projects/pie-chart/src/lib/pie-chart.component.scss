@@ -1,4 +1,6 @@
 svg {
+  z-index: 2;
+  position: absolute;
   width: 282px;
   height: 282px;
   border-radius: 50%;
@@ -8,9 +10,11 @@ svg {
 .circle {
   stroke-dasharray: 0 100;
   stroke-dashoffset: 0;
+  cursor: pointer;
 }
 
 .text-wrapper {
+  z-index: 1;
   position: absolute;
   top: 105px;
   width: 282px;

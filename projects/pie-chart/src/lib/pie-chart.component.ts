@@ -5,6 +5,7 @@ import {
   style,
   transition,
   animate,
+  keyframes,
 } from '@angular/animations';
 
 export interface PieChartInputParam {
@@ -15,6 +16,7 @@ export interface PieChartInputParam {
   dashArray?: string;
   type?: string;
   size?: number;
+  currentState?: string;
 }
 
 export type PieChartInputParams = Array<PieChartInputParam>;
@@ -40,16 +42,22 @@ export type PieChartInputParams = Array<PieChartInputParam>;
       ),
       transition('*=>final', animate('1s ease-out')),
     ]),
+    trigger('animateClick', [
+      state('clicked', style({ opacity: 0.4 })),
+      state('unclicked', style({ opacity: 1 })),
+      transition('unclicked=>clicked', animate('80ms')),
+      transition('clicked=>unclicked', animate('.3s')),
+    ]),
   ],
 })
 export class PieChartComponent implements OnInit {
   @Input()
   private set params(value: PieChartInputParams) {
     this.inputParams = value;
-    this.ref.detectChanges();
   }
 
   public inputParams: PieChartInputParams;
+  public total = 0;
   public currentState = 'initial';
 
   constructor(private ref: ChangeDetectorRef) {
@@ -57,17 +65,34 @@ export class PieChartComponent implements OnInit {
   }
 
   ngOnInit() {
-    const total = this.inputParams.reduce((acc, el) => (acc += el.current), 0);
+    this.total = this.inputParams.reduce((acc, el) => (acc += el.current), 0);
     let currentOffset = 0;
 
     this.inputParams.forEach(el => {
-      const currDashArray = el.current / (total / 100) || 0;
+      const currDashArray = el.current / (this.total / 100) || 0;
       el.dashArray = `${currDashArray} ${100 - currDashArray}`;
       el.dashOffset = (100 - currentOffset).toString();
       currentOffset += currDashArray;
+      el.currentState = 'unclicked';
     });
-
     this.currentState = 'final';
+
+    this.ref.detectChanges();
+  }
+
+  public circleMouseDown(targetId) {
+    const currentParam = this.inputParams.find(
+      el => el.id === parseInt(targetId, 10)
+    );
+    currentParam.currentState = 'clicked';
+    this.ref.detectChanges();
+  }
+
+  public circleMouseUp(targetId) {
+    const currentParam = this.inputParams.find(
+      el => el.id === parseInt(targetId, 10)
+    );
+    currentParam.currentState = 'unclicked';
     this.ref.detectChanges();
   }
 }

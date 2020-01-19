@@ -44,7 +44,6 @@ export class CircleChartComponent implements OnInit {
   @Input()
   private set params(value: CircleChartInputParams) {
     this.inputParams = value;
-    this.ref.detectChanges();
   }
 
   public inputParams: CircleChartInputParams;

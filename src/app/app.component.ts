@@ -18,17 +18,17 @@ export class AppComponent {
   pieChartParam: PieChartInputParams = [
     {
       id: 1,
-      current: 45,
+      current: 45234234,
       color: 'blue',
     },
     {
       id: 2,
-      current: 15,
+      current: 15543534,
       color: 'green',
     },
     {
       id: 3,
-      current: 75,
+      current: 75234234,
       color: 'red',
     },
   ];

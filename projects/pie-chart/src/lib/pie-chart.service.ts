@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
+import { PieChartModule } from './pie-chart.module';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: PieChartModule,
 })
-export class PieChartService {
-
-  constructor() { }
-}
+export class PieChartService {}
