@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -93,6 +94,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -124,6 +126,77 @@
           }
         }
       }
-    }},
+    },
+    "circle-chart": {
+      "projectType": "library",
+      "root": "projects/circle-chart",
+      "sourceRoot": "projects/circle-chart/src",
+      "prefix": "kd",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/circle-chart/tsconfig.lib.json",
+            "project": "projects/circle-chart/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/circle-chart/src/test.ts",
+            "tsConfig": "projects/circle-chart/tsconfig.spec.json",
+            "karmaConfig": "projects/circle-chart/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/circle-chart/tsconfig.lib.json",
+              "projects/circle-chart/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "line-chart": {
+      "projectType": "library",
+      "root": "projects/line-chart",
+      "sourceRoot": "projects/line-chart/src",
+      "prefix": "kd",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/line-chart/tsconfig.lib.json",
+            "project": "projects/line-chart/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/line-chart/src/test.ts",
+            "tsConfig": "projects/line-chart/tsconfig.spec.json",
+            "karmaConfig": "projects/line-chart/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/line-chart/tsconfig.lib.json",
+              "projects/line-chart/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
   "defaultProject": "charts-libraries"
 }

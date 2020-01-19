@@ -1,0 +1,59 @@
+svg {
+  width: 82px;
+  height: 82px;
+  margin-right: 16px;
+  border-radius: 50%;
+  transform: rotate(-90deg) scaleY(-1);
+}
+
+p {
+  margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+.circle-background {
+  z-index: 1;
+}
+
+.icon-wrapper {
+  position: absolute;
+  top: 10px;
+  width: 82px;
+  text-align: center;
+}
+
+.circle-progress {
+  stroke-dasharray: 100 100;
+  z-index: 2;
+}
+
+.text-wrapper {
+  position: absolute;
+  top: 35px;
+  width: 82px;
+  text-align: center;
+}
+
+.text-data {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  margin-top: 0;
+  margin-bottom: 3px;
+}
+
+.text-hint {
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  margin-top: 0;
+  margin-bottom: 3px;
+}
+
+.circle-chart-wrapper {
+  position: relative;
+}

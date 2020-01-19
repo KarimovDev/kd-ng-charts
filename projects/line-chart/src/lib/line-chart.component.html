@@ -1,0 +1,26 @@
+<svg viewBox="0 0 100 15">
+  <line
+    x1="0"
+    y1="0"
+    x2="100"
+    y2="0"
+    class="line-background"
+    stroke="#E5E5E5"
+    stroke-width="15"
+    fill-opacity="0"
+  />
+  <line
+    [@animateFilling]="{
+      value: currentState,
+      params: { stopValue: stopValue }
+    }"
+    x1="0"
+    y1="0"
+    x2="100"
+    y2="0"
+    class="line-progress"
+    [attr.stroke]="inputParams.color"
+    stroke-width="15"
+    fill-opacity="0"
+  />
+</svg>

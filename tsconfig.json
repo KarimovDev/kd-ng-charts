@@ -17,7 +17,21 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "circle-chart": [
+        "dist/circle-chart"
+      ],
+      "circle-chart/*": [
+        "dist/circle-chart/*"
+      ],
+      "line-chart": [
+        "dist/line-chart"
+      ],
+      "line-chart/*": [
+        "dist/line-chart/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

@@ -1,0 +1,33 @@
+<div class="circle-chart-wrapper">
+	<svg viewBox="0 0 31.830988618 31.830988618">
+		<circle
+			class="circle-background"
+			r="15.915494309"
+			cx="15.915494309"
+			cy="15.915494309"
+			stroke="#E5E5E5"
+			stroke-width="4"
+			fill-opacity="0"
+		/>
+		<circle
+			class="circle-progress"
+			[@animateFilling]="{
+				value: currentState,
+				params: { stopValue: stopValue }
+			}"
+			r="15.915494309"
+			cx="15.915494309"
+			cy="15.915494309"
+			stroke="#F81111"
+			stroke-width="4"
+			fill-opacity="0"
+		/>
+  </svg>
+  <div class="icon-wrapper">
+    <ng-content select=".icon"></ng-content>
+  </div>
+	<div class="text-wrapper">
+		<p #text class="text-data">{{ sizeValue }}</p>
+		<p class="text-hint">{{ inputParams.current | kbToSizePostfix }}</p>
+	</div>
+</div>
