@@ -1,0 +1,41 @@
+svg {
+  width: 282px;
+  height: 282px;
+  border-radius: 50%;
+  transform: rotate(-90deg) scaleY(-1);
+}
+
+.circle {
+  stroke-dasharray: 0 100;
+  stroke-dashoffset: 0;
+}
+
+.text-wrapper {
+  position: absolute;
+  top: 105px;
+  width: 282px;
+  text-align: center;
+}
+
+.text-data {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 19px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.text-hint {
+  color: grey;
+  text-align: center;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 25px;
+  padding: 0 45px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.circle-chart-wrapper {
+  position: relative;
+}

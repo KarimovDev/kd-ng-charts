@@ -48,8 +48,6 @@ export class CircleChartComponent implements OnInit {
   }
 
   public inputParams: CircleChartInputParams;
-  public sizeValue: string;
-
   public currentState = 'initial';
   public stopValue = '100';
 

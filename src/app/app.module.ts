@@ -6,6 +6,7 @@ import { CircleChartModule } from 'circle-chart';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { LineChartModule } from 'projects/line-chart/src/public-api';
+import { PieChartModule } from 'projects/pie-chart/src/public-api';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,6 +16,7 @@ import { LineChartModule } from 'projects/line-chart/src/public-api';
     BrowserAnimationsModule,
     MatIconModule,
     LineChartModule,
+    PieChartModule,
   ],
   bootstrap: [AppComponent],
 })

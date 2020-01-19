@@ -196,6 +196,41 @@
           }
         }
       }
+    },
+    "pie-chart": {
+      "projectType": "library",
+      "root": "projects/pie-chart",
+      "sourceRoot": "projects/pie-chart/src",
+      "prefix": "kd",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/pie-chart/tsconfig.lib.json",
+            "project": "projects/pie-chart/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/pie-chart/src/test.ts",
+            "tsConfig": "projects/pie-chart/tsconfig.spec.json",
+            "karmaConfig": "projects/pie-chart/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/pie-chart/tsconfig.lib.json",
+              "projects/pie-chart/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "charts-libraries"

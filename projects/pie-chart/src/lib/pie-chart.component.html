@@ -1,0 +1,24 @@
+<div class="circle-chart-wrapper">
+	<svg viewBox="0 0 31.830988618 31.830988618">
+    <circle
+      *ngFor="let inputParam of inputParams"
+			class="circle"
+			[@animateFilling]="{
+				value: currentState,
+				params: { dashArray: inputParam.dashArray, dashOffset: inputParam.dashOffset }
+			}"
+			r="15.915494309"
+			cx="15.915494309"
+			cy="15.915494309"
+      [attr.stroke]="inputParam.color"
+			stroke-width="10"
+			fill-opacity="0"
+		/>
+  </svg>
+  <div class="text-wrapper">
+		<p #text class="text-data">40 Гб</p>
+		<p class="text-hint">
+      <ng-content select=".text-hint"></ng-content>
+    </p>
+	</div>
+</div>

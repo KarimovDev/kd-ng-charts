@@ -30,6 +30,12 @@
       ],
       "line-chart/*": [
         "dist/line-chart/*"
+      ],
+      "pie-chart": [
+        "dist/pie-chart"
+      ],
+      "pie-chart/*": [
+        "dist/pie-chart/*"
       ]
     }
   },
