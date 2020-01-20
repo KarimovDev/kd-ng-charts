@@ -1,7 +1,15 @@
 import { Injectable } from '@angular/core';
-import { PieChartModule } from './pie-chart.module';
+import { Subject } from 'rxjs';
 
-@Injectable({
-  providedIn: PieChartModule,
-})
-export class PieChartService {}
+@Injectable()
+export class PieChartService {
+  private lineChartsState = new Subject<number>();
+
+  public set setState(state) {
+    this.lineChartsState.next(state);
+  }
+
+  public get getState() {
+    return this.lineChartsState.asObservable();
+  }
+}

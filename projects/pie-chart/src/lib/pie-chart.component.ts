@@ -5,11 +5,12 @@ import {
   style,
   transition,
   animate,
-  keyframes,
 } from '@angular/animations';
+import { PieChartService } from './pie-chart.service';
 
 export interface PieChartInputParam {
   id: number;
+  total: number;
   current: number;
   color: string;
   dashOffset?: string;
@@ -60,7 +61,10 @@ export class PieChartComponent implements OnInit {
   public total = 0;
   public currentState = 'initial';
 
-  constructor(private ref: ChangeDetectorRef) {
+  constructor(
+    private ref: ChangeDetectorRef,
+    private pieChartService: PieChartService
+  ) {
     ref.detach();
   }
 
@@ -86,6 +90,8 @@ export class PieChartComponent implements OnInit {
     );
     currentParam.currentState = 'clicked';
     this.ref.detectChanges();
+
+    this.pieChartService.setState = parseInt(targetId, 10);
   }
 
   public circleMouseUp(targetId) {

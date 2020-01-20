@@ -11,3 +11,6 @@
     <span class="text-hint">всего доступно для раздачи</span>
   </kd-pie-chart>
 </div>
+<div class="mb-15" *ngFor="let param of pieChartParam">
+  <kd-additional-line-chart [params]="param"></kd-additional-line-chart>
+</div>
