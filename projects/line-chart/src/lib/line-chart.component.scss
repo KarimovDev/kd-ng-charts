@@ -3,11 +3,10 @@ svg {
   height: 50px;
 }
 
-.line-background {
-  z-index: 1;
+.rect-background {
+  fill: #E5E5E5;
 }
 
-.line-progress {
-  stroke-dasharray: 0 100;
-  z-index: 2;
+.rect-progress {
+  fill: black;
 }

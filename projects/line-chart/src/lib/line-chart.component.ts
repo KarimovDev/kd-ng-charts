@@ -29,7 +29,7 @@ export interface LineChartInputParams {
       state(
         'final',
         style({
-          'stroke-dasharray': '{{stopValue}} 100',
+          width: '{{stopValue}}px',
         }),
         {
           params: {
